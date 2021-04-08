@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Landing from './components/Landing'
+
+// import PrivateRoute from './PrivateRoute/PrivateRoute'
+
+class App extends Component {
+
+  render() {
+    const Container = () => (
+       <div>
+          
+          {/* <PrivateRoute exact path="/welcome" component={Landing} /> */}
+          <Route exact path="/welcome" component={Landing} />
+          
+        </div>
+   )
+    return (
+      <Router>
+        <Switch>
+            <div className="App">
+              <Route component={Container} />
+            </div>
+        </Switch>
+      </Router>
+    )
+  }
 }
 
-export default App;
+export default App
