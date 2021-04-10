@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
-
+import { Redirect } from "react-router-dom";
 
 class Landing extends Component {
+
+  
+
+  redirectFunc = () => {
+    setTimeout(function () {
+      return <Redirect to="/" />
+    }, 5000);
+  }
+
   render() {
     return (
      <div id="background-img">
